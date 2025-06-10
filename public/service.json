@@ -1,0 +1,201 @@
+[
+  {
+    "service_image": "https://example.com/images/pizza-delivery.jpg",
+    "description": "Fast and hot pizza delivered to your doorstep within 30 minutes.",
+    "service_title": "Pizza Delivery",
+    "company_name": "HotSlice",
+    "website": "https://hotslice.com",
+    "category": "food",
+    "price": 15.99,
+    "added_date": "2025-06-01",
+    "user_email": "user1@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/taxi-service.jpg",
+    "description": "24/7 reliable city taxi service with professional drivers.",
+    "service_title": "City Taxi",
+    "company_name": "QuickRide",
+    "website": "https://quickride.com",
+    "category": "transport",
+    "price": 25.00,
+    "added_date": "2025-05-30",
+    "user_email": "user2@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/web-development.jpg",
+    "description": "Custom websites built with responsive design and modern technologies.",
+    "service_title": "Web Development",
+    "company_name": "CodeWorks",
+    "website": "https://codeworks.dev",
+    "category": "IT",
+    "price": 1200.00,
+    "added_date": "2025-06-03",
+    "user_email": "user3@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/burger-deal.jpg",
+    "description": "Juicy burgers with fries and a drink in a budget-friendly combo.",
+    "service_title": "Burger Combo",
+    "company_name": "BurgerPoint",
+    "website": "https://burgerpoint.com",
+    "category": "food",
+    "price": 9.50,
+    "added_date": "2025-06-04",
+    "user_email": "user4@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/car-rental.jpg",
+    "description": "Affordable daily and weekly car rental packages available.",
+    "service_title": "Car Rental",
+    "company_name": "AutoZoom",
+    "website": "https://autozoom.com",
+    "category": "transport",
+    "price": 45.00,
+    "added_date": "2025-06-05",
+    "user_email": "user5@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/app-dev.jpg",
+    "description": "Professional mobile app development for Android and iOS.",
+    "service_title": "Mobile App Development",
+    "company_name": "Appify",
+    "website": "https://appify.tech",
+    "category": "IT",
+    "price": 1500.00,
+    "added_date": "2025-06-06",
+    "user_email": "user6@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/sushi-platter.jpg",
+    "description": "Delicious sushi platter with fresh ingredients and wasabi.",
+    "service_title": "Sushi Platter",
+    "company_name": "Sakura Bites",
+    "website": "https://sakurabites.jp",
+    "category": "food",
+    "price": 28.00,
+    "added_date": "2025-06-07",
+    "user_email": "user7@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/airport-shuttle.jpg",
+    "description": "Convenient airport shuttle service for individuals and groups.",
+    "service_title": "Airport Shuttle",
+    "company_name": "SkyShuttle",
+    "website": "https://skyshuttle.io",
+    "category": "transport",
+    "price": 30.00,
+    "added_date": "2025-06-08",
+    "user_email": "user8@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/cloud-hosting.jpg",
+    "description": "Reliable cloud hosting solutions for your business needs.",
+    "service_title": "Cloud Hosting",
+    "company_name": "SkyNet Hosting",
+    "website": "https://skynet.cloud",
+    "category": "IT",
+    "price": 200.00,
+    "added_date": "2025-06-09",
+    "user_email": "user9@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/indian-thali.jpg",
+    "description": "Traditional Indian thali with a variety of authentic dishes.",
+    "service_title": "Indian Thali",
+    "company_name": "SpiceRoute",
+    "website": "https://spiceroute.in",
+    "category": "food",
+    "price": 12.00,
+    "added_date": "2025-06-02",
+    "user_email": "user10@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/scooter-rental.jpg",
+    "description": "Rent a scooter for easy and quick travel around town.",
+    "service_title": "Scooter Rental",
+    "company_name": "RideLite",
+    "website": "https://ridelite.com",
+    "category": "transport",
+    "price": 12.00,
+    "added_date": "2025-06-01",
+    "user_email": "user11@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/uiux-design.jpg",
+    "description": "Modern UI/UX designs to elevate your brand's user experience.",
+    "service_title": "UI/UX Design",
+    "company_name": "DesignHub",
+    "website": "https://designhub.io",
+    "category": "IT",
+    "price": 800.00,
+    "added_date": "2025-06-10",
+    "user_email": "user12@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/taco-truck.jpg",
+    "description": "Authentic Mexican tacos served fresh from our food truck.",
+    "service_title": "Taco Truck",
+    "company_name": "TacoBuzz",
+    "website": "https://tacobuzz.com",
+    "category": "food",
+    "price": 6.00,
+    "added_date": "2025-06-06",
+    "user_email": "user13@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/bus-pass.jpg",
+    "description": "Unlimited bus travel with our monthly pass.",
+    "service_title": "Monthly Bus Pass",
+    "company_name": "CityBus",
+    "website": "https://citybus.org",
+    "category": "transport",
+    "price": 50.00,
+    "added_date": "2025-06-07",
+    "user_email": "user14@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/database-management.jpg",
+    "description": "Secure and efficient database management services.",
+    "service_title": "Database Management",
+    "company_name": "DBExperts",
+    "website": "https://dbexperts.com",
+    "category": "IT",
+    "price": 500.00,
+    "added_date": "2025-06-08",
+    "user_email": "user15@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/pasta-special.jpg",
+    "description": "Creamy pasta dishes with your choice of sauce and toppings.",
+    "service_title": "Pasta Special",
+    "company_name": "Little Italy",
+    "website": "https://littleitaly.com",
+    "category": "food",
+    "price": 13.50,
+    "added_date": "2025-06-03",
+    "user_email": "user16@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/limo-service.jpg",
+    "description": "Luxury limousine rentals for events, weddings, and VIPs.",
+    "service_title": "Limousine Service",
+    "company_name": "EliteRides",
+    "website": "https://eliterides.com",
+    "category": "transport",
+    "price": 150.00,
+    "added_date": "2025-06-04",
+    "user_email": "user17@example.com"
+  },
+  {
+    "service_image": "https://example.com/images/seo-optimization.jpg",
+    "description": "Improve your search engine ranking with expert SEO services.",
+    "service_title": "SEO Optimization",
+    "company_name": "BoostRank",
+    "website": "https://boostrank.io",
+    "category": "IT",
+    "price": 350.00,
+    "added_date": "2025-06-05",
+    "user_email": "user18@example.com"
+  }
+
+]
