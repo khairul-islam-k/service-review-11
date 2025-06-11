@@ -5,6 +5,9 @@ import Services from "../pages/Services/Services";
 import AddService from "../pages/AddService/AddService";
 import MyServices from "../pages/MyServices/MyServices";
 import MyReviews from "../pages/MyReview/MyReviews";
+import AuthLayOut from "../LayOut/AuthLayOut";
+import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +16,8 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Home
+        Component: Home,
+        loader: () => fetch('/service.json')
       },
       {
         path: 'services',
@@ -33,4 +37,18 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: 'auth',
+    Component: AuthLayOut,
+    children: [
+      {
+        path: 'login',
+        Component: Login
+      },
+      {
+        path: 'register',
+        Component: Register
+      }
+    ]
+  }
 ]);
