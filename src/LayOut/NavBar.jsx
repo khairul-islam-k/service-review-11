@@ -10,7 +10,7 @@ const NavBar = () => {
     <li><NavLink to='/myReviews'>My Reviews</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm fixed top-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           <Link to='/auth/register'><button className="btn btn-primary mr-1 lg:mr-4">Signup</button></Link>
-          <Link to='/auth/login'><button className="btn btn-primary">Signin</button></Link>
+          <Link to='/auth/login'><button className="btn btn-neutral">Signin</button></Link>
         </div>
       </div>
     );

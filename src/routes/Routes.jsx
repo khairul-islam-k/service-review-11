@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('/service.json')
+        loader: () => fetch('http://localhost:3000/services?limit=6')
       },
       {
         path: 'services',
