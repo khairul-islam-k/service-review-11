@@ -6,7 +6,7 @@ import LottieUse from './LottieUse';
 
 const Home = () => {
     const services = useLoaderData();
-    //console.log(data);
+    console.log(services);
     return (
         <div className='mt-20'>
             <Banner></Banner>

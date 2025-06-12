@@ -8,6 +8,7 @@ import MyReviews from "../pages/MyReview/MyReviews";
 import AuthLayOut from "../LayOut/AuthLayOut";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import ServiceDetails from "../pages/shared/ServiceDetails";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ export const router = createBrowserRouter([
       {
         path: 'myReviews',
         Component: MyReviews
+      },
+      {
+        path:'service/:id',
+        Component: ServiceDetails,
+        loader: ({params}) => fetch(`http://localhost:3000/services/${params.id}`)
       }
     ]
   },
