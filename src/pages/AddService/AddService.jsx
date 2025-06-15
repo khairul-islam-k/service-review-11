@@ -1,6 +1,8 @@
 import React from 'react';
 
 const AddService = () => {
+  const date = new Date();
+  console.log(date);
   const handleService = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -8,72 +10,93 @@ const AddService = () => {
     const service = Object.fromEntries(formData.entries());
 
     console.log(service);
-    
-    fetch('http://localhost:3000/services',{
-      method:'POST',
+
+    fetch('http://localhost:3000/services', {
+      method: 'POST',
       headers: {
-        'content-type':'application/json'
+        'content-type': 'application/json'
       },
       body: JSON.stringify(service)
     }).then(res => res.json())
-    .then(data => console.log(data))
+      .then(data => console.log(data))
   }
-    return (
-        <div className='p-6 lg:p-24'>
-            <div className='lg:p-12 p-5 text-end'>
-                <h1 className='text-6xl'>Add coffee</h1>
-                <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
-            </div>
-            <form onSubmit={handleService}>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6'>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                     <label className="label">Name</label>
-                     <input type="text" className="input w-full" name='name' placeholder="Enter coffee name" />
-                   </fieldset>
+  return (
+    <div className='p-6 lg:p-24'>
+      <div className='lg:p-12 p-5 text-end'>
+        <h1 className='text-6xl'>Add Service</h1>
+        <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+      </div>
 
-                    
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                     <label className="label">Quantity</label>
-                     <input type="text" name='quantity' className="input w-full" placeholder="Enter coffee quantity" />
-                   </fieldset>
+      <div className='bg-[#f1e2e2] lg:py-10 py-7 rounded-xl'>
+        <form onSubmit={handleService}>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6'>
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Service Title</label>
+              <input type="text" className="input w-full" name='service_title' placeholder="Service Title" />
+            </fieldset>
 
-                    
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                     <label className="label">Supplier</label>
-                     <input type="text" name='supplier' className="input w-full" placeholder="Enter coffee supplier" />
-                   </fieldset>
 
-                    
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                     <label className="label">Taste</label>
-                     <input type="text" name='taste' className="input w-full" placeholder="Enter coffee taste" />
-                   </fieldset>
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Company Name</label>
+              <input type="text" name='company_name' className="input w-full" placeholder="Company Name" />
+            </fieldset>
 
-                    
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                     <label className="label">Price</label>
-                     <input type="text" name='price' className="input w-full" placeholder="Enter coffee price" />
-                   </fieldset>
 
-                    
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                     <label className="label">Details</label>
-                     <input type="text" name='details' className="input w-full" placeholder="Enter coffee details" />
-                   </fieldset>
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Website</label>
+              <input type="url" name='website' className="input w-full" placeholder="Website" />
+            </fieldset>
 
-                    
 
-                </div>
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Category</label>
+              <select name='category' className="select w-full">
+                <option disabled={true}>select</option>
+                <option value='food'>Food</option>
+                <option value='transport'>Transport</option>
+                <option value='IT'>IT</option>
+              </select>
+            </fieldset>
 
-                <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 md:my-6 my-2">
-                     <label className="label">Photo</label>
-                     <input type="text" name='photo' className="input w-full" placeholder="Enter photo URL" />
-                   </fieldset>
 
-                   <input className='btn w-full' type="submit" value="Add Coffee" />
-            </form>
-        </div>
-    );
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Price</label>
+              <input type="text" name='price' className="input w-full" placeholder="Enter service price" />
+            </fieldset>
+
+
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Photo</label>
+              <input type="text" name='service_image' className="input w-full" placeholder="Enter photo URL" />
+            </fieldset>
+
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Email</label>
+              <input type="email" name='user_email' className="input w-full" placeholder="User Email" />
+            </fieldset>
+
+            <fieldset className="fieldset rounded-box p-4">
+              <label className="label">Added Date</label>
+              <input type="date" name='added_date' className="input w-full" placeholder="Added date" defaultValue={date} />
+            </fieldset>
+
+
+
+          </div>
+
+          <fieldset className="fieldset rounded-box p-4 md:my-6 my-2">
+            <label className="label">service description</label>
+            <textarea className='border w-full bg-[#ffffff]' name="description" id="text" rows="5"></textarea>
+          </fieldset>
+
+          <div className='px-4'>
+            <input className='btn w-full' type="submit" value="Add service" />
+          </div>
+        </form>
+      </div>
+
+    </div>
+  );
 };
 
 export default AddService;

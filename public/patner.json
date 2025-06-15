@@ -1,0 +1,64 @@
+ [
+  {
+    "name": "Colonel Harland Sanders",
+    "logo": "https://i.ibb.co/3y5nRmPR/person-1.png",
+    "description": "Founder of Kentucky Fried Chicken (KFC), turned a simple fried chicken recipe into a global fast-food empire."
+  },
+  {
+    "name": "Ray Kroc",
+    "logo": "https://i.ibb.co/v44T0VXz/person-2.png",
+    "description": "Expanded McDonald's from a small chain into the world's largest fast-food franchise."
+  },
+  {
+    "name": "Dave Thomas",
+    "logo": "https://i.ibb.co/0pnqYNYd/person-3.png",
+    "description": "Founder of Wendy’s, known for fresh, square beef patties and innovative marketing."
+  },
+  {
+    "name": "Travis Kalanick",
+    "logo": "https://i.ibb.co/pBGh1tXZ/person-4.png",
+    "description": "Before Uber, he co-founded Red Swoosh and Scour.net; disrupted the food delivery industry with Uber Eats."
+  },
+
+  {
+    "name": "Elon Musk",
+    "logo": "https://i.ibb.co/8DKCFzFp/person-6.png",
+    "description": "CEO of Tesla and SpaceX, also founded X.com (which became PayPal); leading innovator in tech and AI."
+  },
+  {
+    "name": "Mark Zuckerberg",
+    "logo": "https://i.ibb.co/9kvvv8Pd/person-7.png",
+    "description": "Founder of Facebook (Meta), revolutionized global social networking and virtual reality ecosystems."
+  },
+  {
+    "name": "Satya Nadella",
+    "logo": "https://i.ibb.co/GYdvjKV/person-20.png",
+    "description": "CEO of Microsoft, led its shift to cloud computing and revitalized the company’s growth."
+  },
+  {
+    "name": "Sundar Pichai",
+    "logo": "https://i.ibb.co/Z6Rc9wcg/person-19.png",
+    "description": "CEO of Google and Alphabet, known for advancing Chrome, Android, and Google Cloud technologies."
+  },
+
+  {
+    "name": "Henry Ford",
+    "logo": "https://i.ibb.co/21xNqnbm/person-17.png",
+    "description": "Founder of Ford Motor Company, revolutionized the auto industry with mass production and the Model T."
+  },
+  {
+    "name": "Enzo Ferrari",
+    "logo": "https://i.ibb.co/8L8w8171/person-16.png",
+    "description": "Founder of Ferrari, an iconic brand known for luxury sports cars and racing excellence."
+  },
+  {
+    "name": "Soichiro Honda",
+    "logo": "https://i.ibb.co/Z6LNJ8pC/person-15.png",
+    "description": "Founded Honda Motor Co., expanding from motorcycles to cars and robotics worldwide."
+  },
+  {
+    "name": "Frederick W. Smith",
+    "logo": "https://i.ibb.co/7xKdbnYZ/person-14.png",
+    "description": "Founder of FedEx, revolutionized the global logistics and express shipping industry."
+  }
+]
