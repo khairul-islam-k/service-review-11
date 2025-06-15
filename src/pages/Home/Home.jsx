@@ -5,18 +5,31 @@ import Banner from './Banner';
 import LottieUse from './LottieUse';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import slide_1 from '../../assets/slide-1.png'
-import slide_2 from '../../assets/slide-2.png'
-import slide_3 from '../../assets/slide-3.png'
 import { FaStar } from 'react-icons/fa6';
+import Counter from './Counter';
 
 const Home = () => {
-    const [patner, setPatner] = useState([]);
+    const [serviceAll, setServiceAll] = useState([]);
+    const [partner, setPartner] = useState([]);
+    const [reviews, setReviews] = useState([]);
     const services = useLoaderData();
+
     useEffect(() => {
-        fetch('/patner.json')
+        fetch('http://localhost:3000/services')
             .then(res => res.json())
-            .then(data => setPatner(data))
+            .then(data => setServiceAll(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:3000/partners')
+            .then(res => res.json())
+            .then(data => setPartner(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:3000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
     }, [])
     return (
         <div className='mt-20'>
@@ -38,7 +51,7 @@ const Home = () => {
                 <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>Meet our partners</h3>
                 <Carousel showThumbs={false} autoPlay infiniteLoop>
                 {
-                    patner.map(data => <div className='mx-auto p-5 lg:w-[380px] w-[300px] bg-[#57c7a0] rounded-2xl'>
+                    partner.map(data => <div className='mx-auto p-5 lg:w-[380px] w-[300px] bg-[#57c7a0] rounded-2xl'>
                         <div className='flex items-center lg:gap-4 gap-3'>
                             <div className='w-[41px] h-[41px]'><img className='rounded-full' src={data.logo} alt="" /></div>
                             <h3 className='lg:text-2xl text-xl font-bold'>{data.name}</h3>
@@ -58,6 +71,16 @@ const Home = () => {
             </Carousel>
             </div>
 
+            
+            {/* counter */}
+            <div className='bg-[#57c7a0] lg:py-12 py-7'>
+                <h3 className='lg:text-[40px] text-3xl font-semibold lg:font-extrabold lg:mt-20 mt-12 text-center'>We Provide Best Services</h3>
+                <p className='text-center text-gray-600 mt-4 mb-8'>Our platform connects you with verified, experienced person across various specialties — all at your convenience. </p>
+                <Counter
+                serviceAll={serviceAll}
+                reviews={reviews}
+                partner={partner}></Counter>
+            </div>
             
         </div>
     );
