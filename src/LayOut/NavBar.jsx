@@ -4,8 +4,8 @@ import UseAuth from '../pages/auth/UseAuth';
 import './NavBar.css';
 
 const NavBar = () => {
-  const ab = UseAuth();
-  console.log(ab);
+  const {user} = UseAuth();
+  console.log(user);
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/services'>Services</NavLink></li>
@@ -34,8 +34,12 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to='/auth/register'><button className="btn btn-primary mr-1 lg:mr-4">Signup</button></Link>
+          {
+            user?<button className="btn btn-neutral">LogOut</button>:<>
+            <Link to='/auth/register'><button className="btn btn-primary mr-1 lg:mr-4">Signup</button></Link>
           <Link to='/auth/login'><button className="btn btn-neutral">Signin</button></Link>
+            </>
+          }
         </div>
       </div>
     );

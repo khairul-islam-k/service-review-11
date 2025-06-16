@@ -8,7 +8,7 @@ const Counter = ({serviceAll,reviews,partner}) => {
     const servicesN = serviceAll.length;
     const reviewsN = reviews.length;
     const partnerN = partner.length;
-    console.log(servicesN,reviewsN,partnerN);
+
     return (
         <div className='mb-20 lg:max-w-[1280px] mx-auto grid lg:grid-cols-3 gap-5 px-4'>
 
