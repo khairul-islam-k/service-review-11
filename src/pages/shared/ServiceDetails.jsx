@@ -1,24 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
-import user from '../../assets/user.png';
+import userP from '../../assets/user.png';
 import Rating from 'react-rating';
 import { FaRegStar } from 'react-icons/fa';
 import { FaStar } from 'react-icons/fa6';
 import axios from 'axios';
 import ShowReviews from './ShowReviews';
+import UseAuth from '../auth/UseAuth';
+import Swal from 'sweetalert2';
 const ServiceDetails = () => {
     const { service_image, category, company_name, description, price, added_date, service_title, user_email, website, _id } = useLoaderData();
     const [rating, setRating] = useState(0);
     const [totalReviews, setTotalReviews] = useState([]);
     const [reviews, setReviews] = useState([]);
+    const { user } = UseAuth();
+    const dateN = user?.reloadUserInfo?.lastRefreshAt;
+    const newDate = dateN?.split('T');
 
     const handleReview = (e) => {
         e.preventDefault();
+
+        if (!user) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please login first",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            })
+            return;
+        }
         const text = e.target.text.value;
-        const email = e.target.email.value;
-        const date = e.target.date.value;
-        const name = e.target.name.value;
-        const photo = e.target.photo.value;
+        const email = user.email;
+        const date = newDate[0];
+        const name = user.displayName;
+        const photo = user.photoURL;
         const service_id = _id;
 
         const newReview = {
@@ -39,9 +54,9 @@ const ServiceDetails = () => {
 
     useEffect(() => {
         fetch('http://localhost:3000/reviews')
-        .then(res => res.json())
-        .then(data => setTotalReviews(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setTotalReviews(data))
+    }, [])
 
     useEffect(() => {
         fetch(`http://localhost:3000/reviews?id=${_id}`)
@@ -66,7 +81,7 @@ const ServiceDetails = () => {
 
                 <p className='text-center mt-5'>user email :</p>
                 <div className='flex items-center justify-center gap-3'>
-                    <img src={user} alt="" />
+                    <img src={userP} alt="" />
                     <p className='lg:text-2xl text-xl font-bold text-gray-600'>{user_email}</p>
                 </div>
 
@@ -126,11 +141,6 @@ const ServiceDetails = () => {
                     <textarea className='border w-full bg-amber-100' name="text" id="text" rows="5"></textarea><br />
                     <input className='mt-4 mr-2' type="checkbox" />
                     We care about protecting your data. Here's our privacy policy.<br />
-                    {/* extra */}
-                    <input type="email" name="email" placeholder='email' /><br />
-                    <input type="date" name="date" /><br />
-                    <input type="text" name="name" placeholder='name' /><br />
-                    <input type="url" name="photo" placeholder='Photo' /><br />
                     <button className='btn btn-primary mt-4'>Submit Review</button>
                 </form>
             </div>

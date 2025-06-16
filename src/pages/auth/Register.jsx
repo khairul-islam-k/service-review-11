@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import UseAuth from './UseAuth';
 import Swal from 'sweetalert2';
 
 const Register = () => {
-  const { createUser } = UseAuth();
+  const navigate = useNavigate();
+  const { createUser, updateUser } = UseAuth();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -13,9 +14,12 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const information = {
+      displayName: name, photoURL: photo
+    }
+
     const passwordRgx = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
     if (!passwordRgx.test(password)) {
-      //alert('Password must have one lowercase one uppercase one digit and 6 characters or longer');
 
       Swal.fire({
         icon: "error",
@@ -29,13 +33,17 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         if (result) {
-          Swal.fire({
+          navigate('/');
+          updateUser(information)
+          .then(
+            Swal.fire({
             position: "top-end",
             icon: "success",
             title: "Your Registration has been successful",
             showConfirmButton: false,
             timer: 1500
-          });
+          })
+          )
         }
       })
       .catch(error => {

@@ -50,7 +50,13 @@ const Home = () => {
             {/* carousel */}
             <div className='bg-[#e2f0eb] lg:py-20 py-10 mt-6'>
                 <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>Meet our partners</h3>
-                <Carousel showThumbs={false} autoPlay infiniteLoop>
+                {
+                    partner.length>0 && <Carousel autoPlay={true}
+                    infiniteLoop={true}
+                    interval={3000}
+                    showThumbs={false}
+                    showIndicators={true}
+                    stopOnHover={false}>
                     {
                         partner.map(data => <div className='mx-auto p-5 lg:w-[380px] w-[300px] bg-[#57c7a0] rounded-2xl'>
                             <div className='flex items-center lg:gap-4 gap-3'>
@@ -70,6 +76,7 @@ const Home = () => {
                         </div>)
                     }
                 </Carousel>
+                }
             </div>
 
 

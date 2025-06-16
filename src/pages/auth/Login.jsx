@@ -1,12 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import UseAuth from './UseAuth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    return (
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl lg:pt-12 pt-7">
-            <h3 className='text-2xl font-bold text-center'>Login your account</h3>
+  const Navigate = useNavigate();
+  const { logInUser } = UseAuth();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    logInUser(email, password)
+      .then(result => {
+        if (result) {
+          Navigate('/');
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your login has been successful",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      })
+      .catch(error => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Email or Password is wrong",
+          footer: '<a href="#">Why do I have this issue?</a>'
+        });
+      })
+  }
+  return (
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl lg:pt-12 pt-7">
+      <h3 className='text-2xl font-bold text-center'>Login your account</h3>
       <div className="card-body">
-        <form className="fieldset">
+        <form onSubmit={handleLogin} className="fieldset">
           <label className="label">Email</label>
           <input name='email' type="email" className="input" placeholder="Email" required />
           <label className="label">Password</label>
@@ -20,7 +52,7 @@ const Login = () => {
         } */}
       </div>
     </div>
-    );
+  );
 };
 
 export default Login;

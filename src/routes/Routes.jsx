@@ -9,6 +9,7 @@ import AuthLayOut from "../LayOut/AuthLayOut";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ServiceDetails from "../pages/shared/ServiceDetails";
+import PrivateRoute from "../pages/auth/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -27,15 +28,15 @@ export const router = createBrowserRouter([
       },
       {
         path:'addService',
-        Component: AddService
+        element: <PrivateRoute><AddService></AddService></PrivateRoute>
       },
       {
         path: 'myServices',
-        Component: MyServices
+        element: <PrivateRoute><MyServices></MyServices></PrivateRoute>
       },
       {
         path: 'myReviews',
-        Component: MyReviews
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
       },
       {
         path:'service/:id',

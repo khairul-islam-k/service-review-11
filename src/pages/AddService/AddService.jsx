@@ -1,8 +1,11 @@
 import React from 'react';
+import UseAuth from '../auth/UseAuth';
 
 const AddService = () => {
-  const date = new Date();
-  console.log(date);
+  const {user} = UseAuth();
+  const date = user?.reloadUserInfo?.lastRefreshAt;
+  const newDate = date.split('T');
+  
   const handleService = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -72,12 +75,12 @@ const AddService = () => {
 
             <fieldset className="fieldset rounded-box p-4">
               <label className="label">Email</label>
-              <input type="email" name='user_email' className="input w-full" placeholder="User Email" />
+              <input type="email" name='user_email' className="input w-full" placeholder="User Email" defaultValue={user?.email} readOnly />
             </fieldset>
 
             <fieldset className="fieldset rounded-box p-4">
               <label className="label">Added Date</label>
-              <input type="date" name='added_date' className="input w-full" placeholder="Added date" defaultValue={date} />
+              <input type="date" name='added_date' className="input w-full" placeholder="Added date" defaultValue={newDate[0]} readOnly />
             </fieldset>
 
 
