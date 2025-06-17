@@ -1,27 +1,31 @@
 import React from 'react';
 import UseAuth from '../auth/UseAuth';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddService = () => {
-  const {user} = UseAuth();
+  const { user } = UseAuth();
   const date = user?.reloadUserInfo?.lastRefreshAt;
-  const newDate = date.split('T');
-  
+  const newDate = date?.split('T');
+
   const handleService = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const service = Object.fromEntries(formData.entries());
 
-    console.log(service);
+    axios.post('http://localhost:3000/services', service)
+      .then(res => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Service added successfully",
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
+      .catch(error => console.log(error))
 
-    fetch('http://localhost:3000/services', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(service)
-    }).then(res => res.json())
-      .then(data => console.log(data))
   }
   return (
     <div className='p-6 lg:p-24'>

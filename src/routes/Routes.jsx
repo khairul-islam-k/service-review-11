@@ -10,6 +10,7 @@ import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ServiceDetails from "../pages/shared/ServiceDetails";
 import PrivateRoute from "../pages/auth/PrivateRoute";
+import ServiceUpdate from "../pages/MyServices/ServiceUpdate";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ export const router = createBrowserRouter([
       {
         path:'service/:id',
         Component: ServiceDetails,
+        loader: ({params}) => fetch(`http://localhost:3000/services/${params.id}`)
+      },
+      {
+        path: 'myServices/:id',
+        element: <PrivateRoute><ServiceUpdate></ServiceUpdate></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:3000/services/${params.id}`)
       }
     ]
