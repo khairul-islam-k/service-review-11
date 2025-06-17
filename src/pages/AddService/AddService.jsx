@@ -32,7 +32,7 @@ const AddService = () => {
     <div className='p-6 lg:p-24'>
       <div className='lg:p-12 p-5 text-end'>
         <h1 className='text-6xl'>Add Service</h1>
-        <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+        <p>Here are three types of cards such as - food, transport and IT. You can learn more about them if you want. OR you can add any work if you want.You give any review about them.Our platform are always trying to provide the best service to our customers</p>
       </div>
 
       <div className='bg-[#f1e2e2] lg:py-10 py-7 rounded-xl'>

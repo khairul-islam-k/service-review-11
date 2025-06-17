@@ -11,15 +11,15 @@ const LottieUse = () => {
             <div>
                 <div className="mb-5">
                     <h3 className='lg:text-4xl text-2xl font-bold'>Premium Directory</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, expedita?</p>
+                    <p>A Premium Directory is a curated, often paid-access <br /> listing platform that showcases high-quality entries — <br /> typically businesses, professionals, products, or services </p>
                 </div>
                 <div className="mb-5">
                     <h3 className='lg:text-4xl text-2xl font-bold'>Unique set solution</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, expedita?</p>
+                    <p>In programming, a unique set solution <br /> might refer to using a set data structure (which <br /> automatically ensures uniqueness) to solve a problem.</p>
                 </div>
                 <div>
                     <h3 className='lg:text-4xl text-2xl font-bold'>Enrich Web Experience</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, expedita?</p>
+                    <p>"Enrich Web Experience" is a phrase often used in digital <br /> strategy, UX/UI design, marketing, and web development.</p>
                 </div>
             </div>
         </div>

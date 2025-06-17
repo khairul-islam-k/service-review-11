@@ -12,6 +12,7 @@ import ServiceDetails from "../pages/shared/ServiceDetails";
 import PrivateRoute from "../pages/auth/PrivateRoute";
 import ServiceUpdate from "../pages/MyServices/ServiceUpdate";
 import ReviewUpdate from "../pages/MyReview/ReviewUpdate";
+import Error from "../pages/error/Error";
 
 export const router = createBrowserRouter([
   {
@@ -70,5 +71,9 @@ export const router = createBrowserRouter([
         Component: Register
       }
     ]
+  },
+  {
+    path:'*',
+    Component:Error
   }
 ]);
