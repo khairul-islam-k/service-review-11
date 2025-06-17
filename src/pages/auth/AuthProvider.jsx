@@ -41,16 +41,16 @@ const AuthProvider = ({children}) => {
             setLoading(false);
             setUser(currentUser);
             
-            if (currentUser?.email) {
-                const userData = {email: currentUser.email}
-                axios.post('https://service-review-server-gules-seven.vercel.app/jwt',userData,{
-                    withCredentials: true
-                }).then(res => {
-                    console.log(res.data);
-                }).catch(error => {
-                    console.log(error);
-                })
-            }
+            // if (currentUser?.email) {
+            //     const userData = {email: currentUser.email}
+            //     axios.post('https://service-review-server-gules-seven.vercel.app/jwt',userData,{
+            //         withCredentials: true
+            //     }).then(res => {
+            //         console.log(res.data);
+            //     }).catch(error => {
+            //         console.log(error);
+            //     })
+            // }
 
         })
         return () => {unSubscribe()}
