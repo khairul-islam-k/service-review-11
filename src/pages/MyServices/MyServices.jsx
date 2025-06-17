@@ -5,7 +5,11 @@ import ServicesTable from './ServicesTable';
 const MyServices = () => {
     const [myServices, setMyServices] = useState([]);
     const { user } = UseAuth();
-    console.log(user);
+
+    const removeFunction = (id) => {
+        const remainService = myServices.filter(service => service._id !== id);
+        setMyServices(remainService);
+    }
 
     useEffect(() => {
         fetch(`http://localhost:3000/services/myServices/${user?.email}`)
@@ -14,7 +18,7 @@ const MyServices = () => {
     },[user])
     return (
         <div className='mt-20 w-11/12 mx-auto'>
-            <h3>My services</h3>
+            <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>My services</h3>
 
             {/* table */}
             <div className="overflow-x-auto">
@@ -33,6 +37,7 @@ const MyServices = () => {
                         {
                             myServices.map(service => <ServicesTable
                             service={service}
+                            removeFunction={removeFunction}
                             key={service._id}
                             ></ServicesTable>)
                         }

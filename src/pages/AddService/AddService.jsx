@@ -16,6 +16,7 @@ const AddService = () => {
 
     axios.post('http://localhost:3000/services', service)
       .then(res => {
+        e.target.reset();
         Swal.fire({
           position: "top-end",
           icon: "success",

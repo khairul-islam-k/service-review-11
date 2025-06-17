@@ -1,9 +1,37 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router';
+import Swal from 'sweetalert2';
 
-const ServicesTable = ({ service }) => {
-    console.log(service)
-    const { service_image, service_title, company_name, category, price,_id } = service;
+const ServicesTable = ({ service,removeFunction }) => {
+    //console.log(service)
+    const { service_image, service_title, company_name, category, price, _id } = service;
+    const handleDelete = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:3000/services/${_id}`)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            removeFunction(_id)
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+                    .catch(error => console.log(error))
+            }
+        });
+    }
     return (
         <tr>
             <td>
@@ -28,7 +56,7 @@ const ServicesTable = ({ service }) => {
             <th>
                 <div className='flex justify-end gap-2 lg:gap-4'>
                     <Link to={`/myServices/${_id}`}><button className="btn btn-secondary">Update</button></Link>
-                    <button className="btn btn-accent">Delete</button>
+                    <button onClick={handleDelete} className="btn btn-accent">Delete</button>
                 </div>
             </th>
         </tr>
