@@ -3,9 +3,11 @@ import { Link, NavLink } from 'react-router';
 import UseAuth from '../pages/auth/UseAuth';
 import './NavBar.css';
 import Swal from 'sweetalert2';
+import logo from '../assets/logo.png'
 
 const NavBar = () => {
   const { user, logOutUser } = UseAuth();
+  console.log(user?.photoURL);
 
   const handleLogOut = () => {
     logOutUser()
@@ -46,20 +48,31 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <div className='flex items-center gap-4'>
+          <img className='rounded-lg' src={logo} alt="" />
+          <h3 className='text-3xl font-bold lg:block hidden'>Service Review</h3>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {links}
         </ul>
       </div>
-      <div className="navbar-end">
-        {
-          user ? <button onClick={handleLogOut} className="btn btn-neutral">LogOut</button> : <>
-            <Link to='/auth/register'><button className="btn btn-primary mr-1 lg:mr-4">Signup</button></Link>
-            <Link to='/auth/login'><button className="btn btn-neutral">Signin</button></Link>
-          </>
-        }
+      <div className="navbar-end gap-2">
+        <div>
+          {
+            user?.photoURL && <img className='w-[41px] h-[41px] rounded-full' src={user?.photoURL} alt="" />
+          }
+        </div>
+        
+        <div>
+          {
+            user ? <button onClick={handleLogOut} className="btn btn-neutral">LogOut</button> : <>
+              <Link to='/auth/register'><button className="btn btn-primary mr-1 lg:mr-4">Signup</button></Link>
+              <Link to='/auth/login'><button className="btn btn-neutral">Signin</button></Link>
+            </>
+          }
+        </div>
       </div>
     </div>
   );

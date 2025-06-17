@@ -5,6 +5,10 @@ import ReviewCard from './ReviewCard';
 const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
     const { user } = UseAuth();
+    const removeFunction = (id) => {
+        const remainReviews = reviews.filter(review => review._id !== id);
+        setReviews(remainReviews);
+    }
 
     useEffect(() => {
         fetch(`http://localhost:3000/reviews/${user?.email}`)
@@ -22,6 +26,7 @@ const MyReviews = () => {
                     {
                         reviews.map(review => <ReviewCard
                         review={review}
+                        removeFunction={removeFunction}
                         key={review._id}
                         ></ReviewCard>)
                     }
