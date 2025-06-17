@@ -16,19 +16,19 @@ const Home = () => {
     const services = useLoaderData();
 
     useEffect(() => {
-        fetch('http://localhost:3000/services')
+        fetch('https://service-review-server-gules-seven.vercel.app/services')
             .then(res => res.json())
             .then(data => setServiceAll(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/partners')
+        fetch('https://service-review-server-gules-seven.vercel.app/partners')
             .then(res => res.json())
             .then(data => setPartner(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/reviews')
+        fetch('https://service-review-server-gules-seven.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

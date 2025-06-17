@@ -14,7 +14,7 @@ const AddService = () => {
     const formData = new FormData(form);
     const service = Object.fromEntries(formData.entries());
 
-    axios.post('http://localhost:3000/services', service)
+    axios.post('https://service-review-server-gules-seven.vercel.app/services', service)
       .then(res => {
         e.target.reset();
         Swal.fire({

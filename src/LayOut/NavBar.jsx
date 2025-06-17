@@ -7,7 +7,6 @@ import logo from '../assets/logo.png'
 
 const NavBar = () => {
   const { user, logOutUser } = UseAuth();
-  console.log(user?.photoURL);
 
   const handleLogOut = () => {
     logOutUser()

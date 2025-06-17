@@ -19,7 +19,7 @@ const ReviewCard = ({ review,removeFunction }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/reviews/${_id}`)
+                axios.delete(`https://service-review-server-gules-seven.vercel.app/reviews/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             removeFunction(_id);
