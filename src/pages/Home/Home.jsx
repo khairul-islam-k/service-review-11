@@ -93,7 +93,6 @@ const Home = () => {
                     partner={partner}></Counter>
             </div>
 
-            k
         </div>
     );
 };
