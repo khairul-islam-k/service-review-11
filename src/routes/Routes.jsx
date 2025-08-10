@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('https://service-review-server-gules-seven.vercel.app/services?limit=6')
+        loader: () => fetch('https://service-review-server-gules-seven.vercel.app/services?limit=8')
       },
       {
         path: 'services',

@@ -5,7 +5,6 @@ import ServicesCard from '../shared/ServicesCard';
 const Services = () => {
     const allServices = useLoaderData();
     const [services, setServices] = useState(allServices);
-    console.log(services)
 
     const handleSearch = (e) => {
         const search = allServices.filter(service => service.service_title.toLowerCase().includes(e.target.value.toLowerCase()))
@@ -27,17 +26,31 @@ const Services = () => {
         setServices(ITServices);
     }
 
+    const handleHigher = () => {
+        fetch('https://service-review-server-gules-seven.vercel.app/highPrice')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }
+
+    const handleLower = () => {
+        fetch('https://service-review-server-gules-seven.vercel.app/lowPrice')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }
+
     return (
         <div className='mt-20 bg-base-200 pt-4'>
-            <h3 className='lg:text-4xl text-2xl font-bold text-center'>Select category</h3>
+            <h3 className='lg:text-4xl text-2xl font-bold text-center'>All Services Card</h3>
             {/* dropdown */}
             <div className='flex justify-center pt-5'>
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn m-1">Category</div>
+                    <div tabIndex={0} role="button" className="btn m-1 btn-primary">Sort by</div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                         <li onClick={handleFood}><a>Food</a></li>
                         <li onClick={handleTransport}><a>Transport</a></li>
                         <li onClick={handleIT}><a>IT</a></li>
+                        <li onClick={handleHigher}><a>higher price</a></li>
+                        <li onClick={handleLower}><a>lower price</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,9 +74,8 @@ const Services = () => {
             </div>
 
             <div className='w-11/12 mx-auto py-10'>
-                <h3 className='lg:text-4xl text-2xl font-bold text-center'>All Services Card</h3>
                 <p className='text-center mb-10'>Here are three types of cards such as - food, transport and IT. You can learn more about them if you want. OR you can add any work if you want.You give any review about them.Our platform are always trying to provide the best service to our customers</p>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
                     {
                         services.map(data => <ServicesCard data={data} key={data._id}></ServicesCard>)
                     }

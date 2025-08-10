@@ -38,7 +38,7 @@ const Home = () => {
             <div className='bg-base-200 py-20'>
                 <div className='w-11/12 mx-auto'>
                     <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>Services</h3>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
                         {
                             services.map(data => <ServicesCard key={data._id} data={data}></ServicesCard>)
                         }
