@@ -12,7 +12,7 @@ const Counter = ({serviceAll,reviews,partner}) => {
     return (
         <div className='mb-20 lg:max-w-[1280px] mx-auto grid lg:grid-cols-3 gap-5 px-4'>
 
-            <div className='bg-[#FFFFFF] lg:h-[283px]  rounded-3xl flex justify-center items-center p-3'>
+            <div className='bg-base-300 lg:h-[283px]  rounded-3xl flex justify-center items-center p-3'>
             <div>
             <img src={service} alt="" />
             <h3 className='text-4xl font-bold my-4'>
@@ -23,7 +23,7 @@ const Counter = ({serviceAll,reviews,partner}) => {
             </div>
             </div>
 
-            <div className='bg-[#FFFFFF] lg:h-[283px]  rounded-3xl flex justify-center items-center p-3'>
+            <div className='bg-base-300 lg:h-[283px]  rounded-3xl flex justify-center items-center p-3'>
             <div>
             <img src={review} alt="" />
             <h3 className='text-4xl font-bold my-4'>
@@ -34,7 +34,7 @@ const Counter = ({serviceAll,reviews,partner}) => {
             </div>
             </div>
 
-            <div className='bg-[#FFFFFF] lg:h-[283px]  rounded-3xl flex justify-center items-center p-3'>
+            <div className='bg-base-300 lg:h-[283px]  rounded-3xl flex justify-center items-center p-3'>
             <div>
             <img src={partners} alt="" />
             <h3 className='text-4xl font-bold my-4'>

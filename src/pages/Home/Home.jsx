@@ -35,7 +35,7 @@ const Home = () => {
     return (
         <div className='mt-20'>
             <Banner></Banner>
-            <div className='bg-[#e2f0eb] py-20'>
+            <div className='bg-base-200 py-20'>
                 <div className='w-11/12 mx-auto'>
                     <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>Services</h3>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
@@ -48,7 +48,7 @@ const Home = () => {
             <LottieUse></LottieUse>
 
             {/* carousel */}
-            <div className='bg-[#e2f0eb] lg:py-20 py-10 mt-6'>
+            <div className='bg-base-200 lg:py-20 py-10 mt-6'>
                 <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>Meet our partners</h3>
                 {
                     partner.length>0 && <Carousel autoPlay={true}
@@ -81,7 +81,7 @@ const Home = () => {
 
 
             {/* counter */}
-            <div className='bg-[#57c7a0] lg:py-12 py-7'>
+            <div className='bg-[#b7ffe6] lg:py-12 py-7'>
                 <h3 className='lg:text-[40px] text-3xl font-semibold lg:font-extrabold lg:mt-20 mt-12 text-center'>We <motion.span
                     animate={{ color: ['#ff5733', '#afff33', '#33ffbe', '#335eff', '#ff33da'] }}
                     transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}

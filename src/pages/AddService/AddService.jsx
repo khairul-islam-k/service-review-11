@@ -29,9 +29,9 @@ const AddService = () => {
 
   }
   return (
-    <div className='p-6 lg:p-24'>
-      <div className='lg:p-12 p-5 text-end'>
-        <h1 className='text-6xl'>Add Service</h1>
+    <div className='p-10 lg:p-24'>
+      <div className='lg:p-12 p-5'>
+        <h1 className='lg:text-3xl text-2xl'>Add Service</h1>
         <p>Here are three types of cards such as - food, transport and IT. You can learn more about them if you want. OR you can add any work if you want.You give any review about them.Our platform are always trying to provide the best service to our customers</p>
       </div>
 
@@ -39,25 +39,25 @@ const AddService = () => {
         <form onSubmit={handleService}>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6'>
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Service Title</label>
+              <label className="label text-gray-500">Service Title</label>
               <input type="text" className="input w-full" name='service_title' placeholder="Service Title" />
             </fieldset>
 
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Company Name</label>
+              <label className="label text-gray-500">Company Name</label>
               <input type="text" name='company_name' className="input w-full" placeholder="Company Name" />
             </fieldset>
 
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Website</label>
+              <label className="label text-gray-500">Website</label>
               <input type="url" name='website' className="input w-full" placeholder="Website" />
             </fieldset>
 
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Category</label>
+              <label className="label text-gray-500">Category</label>
               <select name='category' className="select w-full">
                 <option disabled={true}>select</option>
                 <option value='food'>Food</option>
@@ -68,23 +68,23 @@ const AddService = () => {
 
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Price</label>
+              <label className="label text-gray-500">Price</label>
               <input type="text" name='price' className="input w-full" placeholder="Enter service price" />
             </fieldset>
 
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Photo</label>
+              <label className="label text-gray-500">Photo</label>
               <input type="text" name='service_image' className="input w-full" placeholder="Enter photo URL" />
             </fieldset>
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Email</label>
+              <label className="label text-gray-500">Email</label>
               <input type="email" name='user_email' className="input w-full" placeholder="User Email" defaultValue={user?.email} readOnly />
             </fieldset>
 
             <fieldset className="fieldset rounded-box p-4">
-              <label className="label">Added Date</label>
+              <label className="label text-gray-500">Added Date</label>
               <input type="date" name='added_date' className="input w-full" placeholder="Added date" defaultValue={newDate[0]} readOnly />
             </fieldset>
 
@@ -93,7 +93,7 @@ const AddService = () => {
           </div>
 
           <fieldset className="fieldset rounded-box p-4 md:my-6 my-2">
-            <label className="label">service description</label>
+            <label className="label text-gray-500">service description</label>
             <textarea className='border w-full bg-[#ffffff]' name="description" id="text" rows="5"></textarea>
           </fieldset>
 

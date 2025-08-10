@@ -28,7 +28,7 @@ const Services = () => {
     }
 
     return (
-        <div className='mt-20 bg-[#e2f0eb] pt-4'>
+        <div className='mt-20 bg-base-200 pt-4'>
             <h3 className='lg:text-4xl text-2xl font-bold text-center'>Select category</h3>
             {/* dropdown */}
             <div className='flex justify-center pt-5'>

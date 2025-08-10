@@ -20,7 +20,7 @@ const MyReviews = () => {
             <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>My Reviews</h3>
 
             {/* CARD */}
-            <div className='bg-[#b6f8e1]'>
+            <div className='bg-review'>
                 <div className='py-20 flex flex-col items-center lg:gap-4 gap-2'>
 
                     {
