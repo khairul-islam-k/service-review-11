@@ -13,6 +13,7 @@ import PrivateRoute from "../pages/auth/PrivateRoute";
 import ServiceUpdate from "../pages/MyServices/ServiceUpdate";
 import ReviewUpdate from "../pages/MyReview/ReviewUpdate";
 import Error from "../pages/error/Error";
+import About from "../pages/About/About";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
         path: 'myReviews/:id',
         element: <PrivateRoute><ReviewUpdate></ReviewUpdate></PrivateRoute>,
         loader: ({params}) => fetch(`https://service-review-server-gules-seven.vercel.app/reviews/reviewId/${params.id}`)
+      },
+      {
+        path: 'aboutUs',
+        Component: About
       }
     ]
   },
