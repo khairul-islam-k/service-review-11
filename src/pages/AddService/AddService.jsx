@@ -12,7 +12,12 @@ const AddService = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const service = Object.fromEntries(formData.entries());
+    const {price, ...services} = Object.fromEntries(formData.entries());
+
+    const service = {
+      ...services,
+      price: +price
+    }
 
     axios.post('https://service-review-server-gules-seven.vercel.app/services', service)
       .then(res => {
@@ -37,7 +42,7 @@ const AddService = () => {
 
       <div className='bg-[#f1e2e2] lg:py-10 py-7 rounded-xl'>
         <form onSubmit={handleService}>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6'>
             <fieldset className="fieldset rounded-box p-4">
               <label className="label text-gray-500">Service Title</label>
               <input type="text" className="input w-full" name='service_title' placeholder="Service Title" />
@@ -94,7 +99,7 @@ const AddService = () => {
 
           <fieldset className="fieldset rounded-box p-4 md:my-6 my-2">
             <label className="label text-gray-500">service description</label>
-            <textarea className='border w-full bg-[#ffffff]' name="description" id="text" rows="5"></textarea>
+            <textarea className='border w-full bg-base-300' name="description" id="text" rows="5"></textarea>
           </fieldset>
 
           <div className='px-4'>
