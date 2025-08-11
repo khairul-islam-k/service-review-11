@@ -30,7 +30,7 @@ const ReviewUpdate = () => {
             text, email, date, service_id, rating: newRating, name, photo
         };
 
-        axios.put(`http://localhost:3000/reviews/${_id}`, newReview)
+        axios.put(`https://service-review-server-gules-seven.vercel.app/reviews/${_id}`, newReview)
             .then(res => {
                 if (res.data.modifiedCount) {
                     Swal.fire({

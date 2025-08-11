@@ -49,7 +49,7 @@ const Register = () => {
       .catch(error => {
         console.log(error);
       })
-    console.log('submit', name, photo, email, password);
+
   }
 
   return (

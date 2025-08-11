@@ -17,26 +17,27 @@ const Home = () => {
     const [reviews8, setReviews8] = useState([]);
     const services = useLoaderData();
 
+
     useEffect(() => {
-        fetch('http://localhost:3000/services')
+        fetch('https://service-review-server-gules-seven.vercel.app/services')
             .then(res => res.json())
             .then(data => setServiceAll(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/partners')
+        fetch('https://service-review-server-gules-seven.vercel.app/partners')
             .then(res => res.json())
             .then(data => setPartner(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/reviews')
+        fetch('https://service-review-server-gules-seven.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/reviews/limit/8')
+        fetch('https://service-review-server-gules-seven.vercel.app/reviews/limit/8')
             .then(res => res.json())
             .then(data => setReviews8(data))
     }, [])
@@ -104,7 +105,7 @@ const Home = () => {
 
             <section className='bg-base-200 py-15'>
                 <h3 className='lg:text-4xl text-2xl font-bold text-center mb-7'>Reviews</h3>
-                <div className='w-11/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4'>
+                <div className='w-11/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4 lg:gap-6'>
                     {
                         reviews8.map(data => <ReviewCard 
                             data={data}

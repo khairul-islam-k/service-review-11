@@ -19,7 +19,7 @@ const AddService = () => {
       price: +price
     }
 
-    axios.post('http://localhost:3000/services', service)
+    axios.post('https://service-review-server-gules-seven.vercel.app/services', service)
       .then(res => {
         e.target.reset();
         Swal.fire({

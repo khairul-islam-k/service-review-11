@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('http://localhost:3000/services?limit=8')
+        loader: () => fetch('https://service-review-server-gules-seven.vercel.app/services?limit=8')
       },
       {
         path: 'services',
         Component: Services,
-        loader: () => fetch('http://localhost:3000/services')
+        loader: () => fetch('https://service-review-server-gules-seven.vercel.app/services')
       },
       {
         path:'addService',
@@ -45,17 +45,17 @@ export const router = createBrowserRouter([
       {
         path:'service/:id',
         Component: ServiceDetails,
-        loader: ({params}) => fetch(`http://localhost:3000/services/${params.id}`)
+        loader: ({params}) => fetch(`https://service-review-server-gules-seven.vercel.app/services/${params.id}`)
       },
       {
         path: 'myServices/:id',
         element: <PrivateRoute><ServiceUpdate></ServiceUpdate></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:3000/services/${params.id}`)
+        loader: ({params}) => fetch(`https://service-review-server-gules-seven.vercel.app/services/${params.id}`)
       },
       {
         path: 'myReviews/:id',
         element: <PrivateRoute><ReviewUpdate></ReviewUpdate></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:3000/reviews/reviewId/${params.id}`)
+        loader: ({params}) => fetch(`https://service-review-server-gules-seven.vercel.app/reviews/reviewId/${params.id}`)
       },
       {
         path: 'aboutUs',

@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa';
 
 const ShowReviews = ({ review }) => {
     const { photo,name,rating,text,date } = review;
-    console.log(review);
+    //console.log(review);
     return (
         <div className='bg-[#f1e2e2] mt-10 lg:mt-20 p-4 lg:p-8 rounded-2xl'>
             <div className='flex justify-between items-center border-b-2 border-dashed border-gray-400 pb-4 mb-4'>

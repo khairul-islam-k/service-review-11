@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 
 const ReviewCard = ({ review,removeFunction }) => {
-    console.log(review);
+    //console.log(review);
     const { serviceTitle, text, rating, _id } = review;
 
     const handleDelete = () => {
@@ -19,7 +19,7 @@ const ReviewCard = ({ review,removeFunction }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/reviews/${_id}`)
+                axios.delete(`https://service-review-server-gules-seven.vercel.app/reviews/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             removeFunction(_id);

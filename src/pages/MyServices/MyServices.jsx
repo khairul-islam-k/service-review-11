@@ -12,7 +12,9 @@ const MyServices = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:3000/services/myServices/${user?.email}`)
+        fetch(`https://service-review-server-gules-seven.vercel.app/services/myServices/${user?.email}`,{
+            credentials: 'include'
+        })
         .then(res => res.json())
         .then(data => setMyServices(data))
     },[user])
