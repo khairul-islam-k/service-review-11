@@ -11,7 +11,7 @@ const MyReviews = () => {
     }
 
     useEffect(() => {
-        fetch(`https://service-review-server-gules-seven.vercel.app/reviews/${user?.email}`)
+        fetch(`http://localhost:3000/reviews/${user?.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user])

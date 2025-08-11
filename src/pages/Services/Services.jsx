@@ -27,13 +27,13 @@ const Services = () => {
     }
 
     const handleHigher = () => {
-        fetch('https://service-review-server-gules-seven.vercel.app/highPrice')
+        fetch('http://localhost:3000/highPrice')
         .then(res => res.json())
         .then(data => setServices(data))
     }
 
     const handleLower = () => {
-        fetch('https://service-review-server-gules-seven.vercel.app/lowPrice')
+        fetch('http://localhost:3000/lowPrice')
         .then(res => res.json())
         .then(data => setServices(data))
     }

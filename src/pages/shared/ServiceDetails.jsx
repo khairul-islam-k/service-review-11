@@ -43,7 +43,7 @@ const ServiceDetails = () => {
         setReviews([...reviews, newReview]);
         setTotalReviews([...totalReviews, newReview]);
 
-        axios.post('https://service-review-server-gules-seven.vercel.app/reviews', newReview)
+        axios.post('http://localhost:3000/reviews', newReview)
             .then(res => {
                 if (res.data) {
                     e.target.reset();
@@ -53,13 +53,13 @@ const ServiceDetails = () => {
     }
 
     useEffect(() => {
-        fetch('https://service-review-server-gules-seven.vercel.app/reviews')
+        fetch('http://localhost:3000/reviews')
             .then(res => res.json())
             .then(data => setTotalReviews(data))
     }, [])
 
     useEffect(() => {
-        fetch(`https://service-review-server-gules-seven.vercel.app/reviews?id=${_id}`)
+        fetch(`http://localhost:3000/reviews?id=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [_id])

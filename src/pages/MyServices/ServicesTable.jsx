@@ -17,7 +17,7 @@ const ServicesTable = ({ service,removeFunction }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://service-review-server-gules-seven.vercel.app/services/${_id}`)
+                axios.delete(`http://localhost:3000/services/${_id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             removeFunction(_id)

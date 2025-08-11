@@ -16,7 +16,7 @@ const ServiceUpdate = () => {
         const formData = new FormData(form);
         const service = Object.fromEntries(formData.entries());
 
-        axios.put(`https://service-review-server-gules-seven.vercel.app/services/${_id}`, service)
+        axios.put(`http://localhost:3000/services/${_id}`, service)
             .then(res => {
                 if (res.data.modifiedCount) {
                     Swal.fire({

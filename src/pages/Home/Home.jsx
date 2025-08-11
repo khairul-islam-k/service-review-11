@@ -8,30 +8,39 @@ import { Carousel } from 'react-responsive-carousel';
 import { FaStar } from 'react-icons/fa6';
 import Counter from './Counter';
 import { motion } from "motion/react"
+import ReviewCard from '../shared/ReviewCard';
 
 const Home = () => {
     const [serviceAll, setServiceAll] = useState([]);
     const [partner, setPartner] = useState([]);
     const [reviews, setReviews] = useState([]);
+    const [reviews8, setReviews8] = useState([]);
     const services = useLoaderData();
 
     useEffect(() => {
-        fetch('https://service-review-server-gules-seven.vercel.app/services')
+        fetch('http://localhost:3000/services')
             .then(res => res.json())
             .then(data => setServiceAll(data))
     }, [])
 
     useEffect(() => {
-        fetch('https://service-review-server-gules-seven.vercel.app/partners')
+        fetch('http://localhost:3000/partners')
             .then(res => res.json())
             .then(data => setPartner(data))
     }, [])
 
     useEffect(() => {
-        fetch('https://service-review-server-gules-seven.vercel.app/reviews')
+        fetch('http://localhost:3000/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:3000/reviews/limit/8')
+            .then(res => res.json())
+            .then(data => setReviews8(data))
+    }, [])
+
     return (
         <div className='mt-20'>
             <Banner></Banner>
@@ -92,6 +101,18 @@ const Home = () => {
                     reviews={reviews}
                     partner={partner}></Counter>
             </div>
+
+            <section className='bg-base-200 py-15'>
+                <h3 className='lg:text-4xl text-2xl font-bold text-center mb-7'>Reviews</h3>
+                <div className='w-11/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4'>
+                    {
+                        reviews8.map(data => <ReviewCard 
+                            data={data}
+                            key={data._id}
+                        ></ReviewCard>)
+                    }
+                </div>
+            </section>
 
         </div>
     );
