@@ -7,7 +7,7 @@ import Loader from '../pages/auth/Loader';
 const MainLayOut = () => {
     const navigation = useNavigation();
     return (
-        <div>
+        <div className='bg-base-200'>
             <NavBar></NavBar>
             {
                 navigation?.state === 'loading'? <Loader></Loader>:<Outlet></Outlet>

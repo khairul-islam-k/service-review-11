@@ -14,6 +14,11 @@ import ServiceUpdate from "../pages/MyServices/ServiceUpdate";
 import ReviewUpdate from "../pages/MyReview/ReviewUpdate";
 import Error from "../pages/error/Error";
 import About from "../pages/About/About";
+import DashBoard from "../pages/DashBoard/DashBoard";
+import DashBoardHome from "../pages/DashBoard/DashBoardHome";
+import Communication from "../pages/DashBoard/Communication";
+import Tracking from "../pages/DashBoard/Tracking";
+import MyProfile from "../pages/DashBoard/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -80,5 +85,27 @@ export const router = createBrowserRouter([
   {
     path:'*',
     Component:Error
+  },
+  {
+    path: "dashboard",
+    element: <DashBoard></DashBoard>,
+    children: [
+      {
+        index: true,
+        element: <DashBoardHome></DashBoardHome>
+      },
+      {
+        path: 'tracking',
+        element: <Tracking></Tracking>
+      },
+      {
+        path: 'profile',
+        element: <MyProfile></MyProfile>
+      }
+    ]
+  },
+  {
+    path: 'communication',
+    element: <Communication></Communication>
   }
 ]);

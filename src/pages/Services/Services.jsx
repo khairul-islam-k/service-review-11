@@ -39,7 +39,7 @@ const Services = () => {
     }
 
     return (
-        <div className='mt-20 bg-base-200 pt-4'>
+        <div className='pt-20 bg-base-200'>
             <h3 className='lg:text-4xl text-2xl font-bold text-center'>All Services Card</h3>
             {/* dropdown */}
             <div className='flex justify-center pt-5'>

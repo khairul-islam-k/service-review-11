@@ -40,7 +40,7 @@ const AddService = () => {
         <p>Here are three types of cards such as - food, transport and IT. You can learn more about them if you want. OR you can add any work if you want.You give any review about them.Our platform are always trying to provide the best service to our customers</p>
       </div>
 
-      <div className='bg-[#f1e2e2] lg:py-10 py-7 rounded-xl'>
+      <div className='bg-base-100 lg:py-10 py-7 rounded-xl'>
         <form onSubmit={handleService}>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6'>
             <fieldset className="fieldset rounded-box p-4">

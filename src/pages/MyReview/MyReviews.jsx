@@ -18,7 +18,7 @@ const MyReviews = () => {
             .then(data => setReviews(data))
     }, [user])
     return (
-        <div className='mt-20'>
+        <div className='pt-20'>
             <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>My Reviews</h3>
 
             {/* CARD */}

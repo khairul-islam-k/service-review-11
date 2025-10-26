@@ -19,7 +19,7 @@ const MyServices = () => {
         .then(data => setMyServices(data))
     },[user])
     return (
-        <div className='mt-20 w-11/12 mx-auto'>
+        <div className='pt-20 w-11/12 mx-auto'>
             <h3 className='lg:text-4xl text-2xl font-bold text-center mb-10'>My services</h3>
 
             {/* table */}
