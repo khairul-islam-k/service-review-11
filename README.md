@@ -13,6 +13,13 @@ This project demonstrates practical experience with:
 
 ---
 
+
+## 🔐 User Credentials
+- **User Email:** nurnabi@gmail.com
+- **User Password:** Khairul37
+
+---
+
 ## 🎯 Key Features
 
 ### 🔐 Authentication System
