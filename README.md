@@ -311,13 +311,6 @@ npm run start
 
 ---
 
-## 📌 Notes
-
-* Email verification and forget password features are intentionally omitted for simplicity.
-* These can be added after evaluation if required.
-
----
-
 ## 📄 License
 
 This project is developed for educational purposes.
